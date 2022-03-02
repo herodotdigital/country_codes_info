@@ -10,7 +10,7 @@ A Flutter package to get country information in various standards. Data was gath
 There are two main ways to use this package.
 
 ### 1. Default by using device region
-This will allow you to fetch the region of the underlying platform and display the data accordingly. Very handy if you use along with the `DialCodeFormatter` to provide integration with dial codes formatter, on phone `TextFormField`s in a `Form`, for example.
+This will allow you to fetch the region of the underlying platform and display the data accordingly.
 
 Assuming an **en-US** region based revice.
 ```
@@ -60,4 +60,4 @@ print(details.marc); // Displays MARC code, for example po.
 
 ## Credit
 
-A special thank you to miguelruivo.com for his [country_codes](https://pub.dev/packages/country_codes) package. This package have awesome translate solution. And thanks to ersel for JS module [Country Code Info](https://github.com/ersel/country-code-info). This package almost every country for this module.
+A special thank you to miguelruivo.com for his [country_codes](https://pub.dev/packages/country_codes) package. This package have awesome translate solution. And thanks to ersel for JS module [Country Code Info](https://github.com/ersel/country-code-info). This package contains almost every country for this module.

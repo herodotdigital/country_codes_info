@@ -1,3 +1,3 @@
-## 0.0.1 - 02/03/2022
+## [0.0.2] - Update readme and pubspec
 
-* Initial release
+## [0.0.1] - Initial release
