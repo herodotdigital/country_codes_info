@@ -35,8 +35,8 @@ class CountryCodes {
   /// ```
   /// This will default to device's language if none is provided.
   static Future<bool> init({Locale? appLocale}) async {
-    final List<dynamic>? locale =
-        List<dynamic>.from(await (_channel.invokeMethod('getLocale', appLocale?.toLanguageTag())));
+    final List<dynamic>? locale = List<dynamic>.from(
+        await (_channel.invokeMethod('getLocale', appLocale?.toLanguageTag())));
     if (locale != null) {
       _deviceLocale = Locale(locale[0], locale[1]);
       _localizedCountryNames = Map.from(locale[2]);
@@ -131,15 +131,18 @@ class CountryCodes {
   /// ```
   static Country detailsFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
-    return Country.withLocalization(country!, _localizedCountryNames[country.a2]);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
+    return Country.withLocalization(
+        country!, _localizedCountryNames[country.a2]);
   }
 
   static Country? detailsFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
-    return Country.withLocalization(country!, _localizedCountryNames[country.a2]);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
+    return Country.withLocalization(
+        country!, _localizedCountryNames[country.a2]);
   }
 
   /// Returns the ISO 3166-1 `alpha2Code` for the given [locale].
@@ -158,7 +161,8 @@ class CountryCodes {
   /// Example: (`USA`, `PRT`, etc.)
   static String? alpha3Code({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.a3;
   }
 
@@ -167,15 +171,20 @@ class CountryCodes {
   /// Example: (`1`, `351`, etc.)
   static String? dialCodeFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
-    return Country.withLocalization(country!, _localizedCountryNames[country.a2]).dial;
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
+    return Country.withLocalization(
+            country!, _localizedCountryNames[country.a2])
+        .dial;
   }
 
   static String? dialCodeFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
-    return Country.withLocalization(country!, _localizedCountryNames[country.a2]).dial;
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
+    return Country.withLocalization(
+            country!, _localizedCountryNames[country.a2])
+        .dial;
   }
 
   /// Returns the extended `name` for the given [locale] or if not provided, device's locale or from alpha code.
@@ -183,14 +192,15 @@ class CountryCodes {
   /// Example: (`United States`, `Portugal`, etc.)
   static String? nameFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.name;
   }
 
   static String? nameFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.name;
   }
 
@@ -199,14 +209,15 @@ class CountryCodes {
   /// Example: (`USA`, `POR`, etc.)
   static String? fifaFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.fifa;
   }
 
   static String? fifaFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.fifa;
   }
 
@@ -215,14 +226,15 @@ class CountryCodes {
   /// Example: (`840`, `620`, etc.)
   static String? numericFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.num;
   }
 
   static String? numericFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.num;
   }
 
@@ -231,14 +243,15 @@ class CountryCodes {
   /// Example: (`US`, `PO`, etc.)
   static String? gecFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.gec;
   }
 
   static String? gecFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.gec;
   }
 
@@ -247,14 +260,15 @@ class CountryCodes {
   /// Example: (`USA`, `POR`, etc.)
   static String? ituFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.itu;
   }
 
   static String? ituFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.itu;
   }
 
@@ -263,14 +277,15 @@ class CountryCodes {
   /// Example: (`USA`, `POR`, etc.)
   static String? iocFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.ioc;
   }
 
   static String? iocFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.ioc;
   }
 
@@ -279,14 +294,15 @@ class CountryCodes {
   /// Example: (`USA`, `P`, etc.)
   static String? dsFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.ds;
   }
 
   static String? dsFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.ds;
   }
 
@@ -295,14 +311,15 @@ class CountryCodes {
   /// Example: (`US`, `PO`, etc.)
   static String? wmoFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.wmo;
   }
 
   static String? wmoFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.wmo;
   }
 
@@ -311,14 +328,15 @@ class CountryCodes {
   /// Example: (`259`, `199`, etc.)
   static String? gaulFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.gaul;
   }
 
   static String? gaulFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.gaul;
   }
 
@@ -327,14 +345,15 @@ class CountryCodes {
   /// Example: (`xxu`, `po`, etc.)
   static String? marcFromLocale({Locale? locale}) {
     String? code = _resolveLocale(locale);
-    Country? country = allCountries.firstWhereSafe((country) => country.a2 == code);
+    Country? country =
+        allCountries.firstWhereSafe((country) => country.a2 == code);
     return country?.marc;
   }
 
   static String? marcFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country =
-        allCountries.firstWhereSafe((country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe(
+        (country) => country.a2 == alpha2 || country.a3 == alpha3);
     return country?.marc;
   }
 

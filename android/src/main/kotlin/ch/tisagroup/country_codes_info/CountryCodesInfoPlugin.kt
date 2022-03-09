@@ -1,12 +1,14 @@
-package com.example.country_codes_info
+package ch.tisagroup.country_codes_info
 
-import androidx.annotation.NonNull
-
+import android.R
+import java.util.Locale
+import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+import io.flutter.plugin.common.PluginRegistry.Registrar
 
 /** CountryCodesInfoPlugin */
 class CountryCodesInfoPlugin: FlutterPlugin, MethodCallHandler {
@@ -27,7 +29,7 @@ class CountryCodesInfoPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   private fun getLocalizedCountryNames(localeTag: String?) : HashMap<String, String> {
-    var localizedCountries: HashMap<String,String> = HashMap()
+    var localizedCountries: HashMap<String, String> = HashMap()
 
     val deviceCountry: String = Locale.getDefault().toLanguageTag();
 

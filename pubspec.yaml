@@ -1,6 +1,6 @@
 name: country_codes_info
 description: Country codes info is an helper package that provides country details given a particular localization, such as dial codes, ISO 3166 codes (alpha-2, alpha-3), country names, GEC, DS and more.
-version: 0.0.3
+version: 0.0.4
 
 homepage: https://github.com/herodotdigital/country_codes_info.git
 
@@ -21,7 +21,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: ch.tisagroup.flutter.plugin.countrycodesinfo.country_codes_info
+        package: ch.tisagroup.country_codes_info
         pluginClass: CountryCodesInfoPlugin
       ios:
         pluginClass: CountryCodesInfoPlugin
