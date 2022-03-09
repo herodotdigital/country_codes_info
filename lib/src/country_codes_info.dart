@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'countries.dart';
 
 class CountryCodes {
-  static const MethodChannel _channel = MethodChannel('country_codes');
+  static const MethodChannel _channel = MethodChannel('country_codes_info');
   static Locale? _deviceLocale;
   static late Map<String, String> _localizedCountryNames;
 

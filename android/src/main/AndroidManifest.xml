@@ -1,0 +1,3 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="ch.tisagroup.flutter.plugin.countrycodesinfo.country_codes_info">
+</manifest>
