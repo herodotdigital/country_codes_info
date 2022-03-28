@@ -139,8 +139,8 @@ class CountryCodes {
 
   static Country? detailsFromAlpha({String? alpha2, String? alpha3}) {
     if (alpha2 == null && alpha3 == null) return null;
-    Country? country = allCountries.firstWhereSafe(
-        (country) => country.a2 == alpha2 || country.a3 == alpha3);
+    Country? country = allCountries.firstWhereSafe((country) =>
+        country.a2 == (alpha2 ?? '') || country.a3 == (alpha3 ?? ''));
     return Country.withLocalization(
         country!, _localizedCountryNames[country.a2]);
   }
