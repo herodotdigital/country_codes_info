@@ -1,3 +1,5 @@
+## [0.0.5] - fix alpha search and change dial return
+
 ## [0.0.4] - fix entry file error and fix format
 
 ## [0.0.3] - Add native implementation

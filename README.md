@@ -1,4 +1,4 @@
-A Flutter package to get country information in various standards. Data was gathered from [http://www.statoids.com/wab.html](http://www.statoids.com/wab.html)
+A Flutter package to get country information in various standards. Data was gathered from www.statoids.com/wab.html
 
 ## Features
 * [x] Names, ISO 3166-1 alpha-2. alpha-3, numeric, ITU, GEC, IOC, FIFA, DS, WMO, GAUL, MARC and dial country codes
