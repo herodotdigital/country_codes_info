@@ -1,3 +1,5 @@
+## [0.0.7] - upgrade gradle versions
+
 ## [0.0.6] - quickfix
 
 ## [0.0.5] - fix alpha search and change dial return
