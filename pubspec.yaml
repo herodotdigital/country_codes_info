@@ -1,6 +1,6 @@
 name: country_codes_info
 description: Country codes info is an helper package that provides country details given a particular localization, such as dial, ISO 3166 codes (alpha-2, alpha-3), country names and more
-version: 0.0.6
+version: 0.0.7
 
 homepage: https://github.com/herodotdigital/country_codes_info.git
 
